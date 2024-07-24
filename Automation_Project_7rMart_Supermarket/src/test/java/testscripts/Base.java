@@ -1,4 +1,4 @@
-package MyProject_TestScripts;
+package testscripts;
 
 import java.time.Duration;
 
@@ -17,11 +17,12 @@ public WebDriver driver;
 	driver.get("https://groceryapp.uniqassosiates.com/admin/login"); 
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	driver.manage().window().maximize(); 
+	System.out.println();
 	}	
 	@AfterMethod
 	
 	public void driverQuit()   
 	{
-	driver.quit();	
+	//driver.quit();	
 	}
 }
