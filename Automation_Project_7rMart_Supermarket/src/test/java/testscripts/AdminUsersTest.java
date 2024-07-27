@@ -7,22 +7,20 @@ import org.testng.annotations.Test;
 
 import pages.AdminUsersPage;
 import pages.LoginPage;
+import utilities.XlUtility;
 
 public class AdminUsersTest extends Base {
 	
 
 	@Test                    
 	public void verifySearchedAdminUserNameDisplayedOnSearchResultsTable() {
-		
-				
-		String userNameOnSearchInput="AnusreeJudson";
-		String userNameExpected="admin";
-		String passwordExpected="admin";
+						
+		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
+		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");
+		String userNameOnSearchInput=XlUtility.getString(1, 0, "AdminUsersPage");
 		
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(userNameExpected);
-		loginpage.enterPasswordOnUserNameField(passwordExpected);
-		loginpage.clickonSigninButton();
+		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();
 		
 		AdminUsersPage adminuserspage=new AdminUsersPage(driver);
 		adminuserspage.clickMoreInfoButton().clickSearchButton().userNameOnSearchInput(userNameOnSearchInput).clickSearchButtonInsideSearchAdminUsers();
@@ -34,11 +32,11 @@ public class AdminUsersTest extends Base {
 		
 	@Test    
 	public void addNewUserToAdminUserTable() {
-		String userNameExpected="admin";
-		String passwordExpected="admin";
-		String userNameExpectedAddUser="jis";
-		String passwordExpectedAddUser="jis";
-		String dropdownValue="staff";
+		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
+		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
+		String userNameExpectedAddUser=XlUtility.getString(1, 1, "AdminUsersPage");
+		String passwordExpectedAddUser=XlUtility.getString(1, 2, "AdminUsersPage");
+		String dropdownValue=XlUtility.getString(1, 3, "AdminUsersPage");
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();
@@ -55,9 +53,9 @@ public class AdminUsersTest extends Base {
 	
 	@Test    
 	public void verifyResetFunctionOfSearchedAdminUser() {
-		String userNameExpected="admin";
-		String passwordExpected="admin";		
-		String userNameOnSearchInput="AnusreeJudson";
+		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
+		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");			
+		String userNameOnSearchInput=XlUtility.getString(1, 0, "AdminUsersPage");
 				
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();
@@ -69,6 +67,5 @@ public class AdminUsersTest extends Base {
 		boolean resetOfSearchEnabled=adminuserspage.verifyResetButtonInsideSearchAdminUsersEnabled();	
 		assertTrue(resetOfSearchEnabled,"Reset action fails");		
 	}
-	
 	
 }

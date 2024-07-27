@@ -23,6 +23,6 @@ public WebDriver driver;
 	
 	public void driverQuit()   
 	{
-	//driver.quit();	
+	driver.quit();	
 	}
 }

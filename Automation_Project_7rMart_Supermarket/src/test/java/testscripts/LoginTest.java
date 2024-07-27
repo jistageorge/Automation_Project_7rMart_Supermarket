@@ -5,13 +5,13 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
+import utilities.XlUtility;
 
 public class LoginTest extends Base{
 	@Test                    
-	public void verifyUserLoginWithCorrectUsernameAndPassword() {
-		String userNameExpected="admin";
-		String passwordExpected="admin";
-		
+	public void verifyUserLoginWithCorrectUsernameAndPassword() {			
+		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
+		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  
 		boolean homePageNavigated=loginpage.verifyHomePageNavigated();
@@ -19,8 +19,8 @@ public class LoginTest extends Base{
 	}
 	@Test                    
 	public void verifyUserLoginWithCorrectUsernameAndWrongPassword() {
-		String userNameExpected="admin";
-		String passwordExpected="adm";
+		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");
+		String passwordExpected=XlUtility.getString(1, 3, "LoginPage");
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton(); 
@@ -29,8 +29,8 @@ public class LoginTest extends Base{
 	}
 	@Test                    
 	public void verifyUserLoginWithWrongUsernameAndCorrectPassword() {
-		String userNameExpected="hi";
-		String passwordExpected="admin";
+		String userNameExpected=XlUtility.getString(1, 2, "LoginPage");
+		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton(); 
@@ -39,8 +39,8 @@ public class LoginTest extends Base{
 	}
 	@Test                    
 	public void verifyUserLoginWithWrongUsernameAndPassword() {
-		String userNameExpected="ammd";
-		String passwordExpected="adm00";
+		String userNameExpected=XlUtility.getString(1, 2, "LoginPage");
+		String passwordExpected=XlUtility.getString(1, 3, "LoginPage");
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton(); 
