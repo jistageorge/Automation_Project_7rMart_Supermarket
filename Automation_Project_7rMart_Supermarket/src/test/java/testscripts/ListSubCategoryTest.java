@@ -16,8 +16,8 @@ public class ListSubCategoryTest extends Base {
 		
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
-		String imgFilePath="C:\\Users\\TestDocuments\\appliances.jpg";
-		String scrollData="window.scrollBy(0,450)";
+		String imgFilePath=XlUtility.getString(1, 0, "ListSubCategoryPage");	
+		String scrollData=XlUtility.getString(1, 1, "ListSubCategoryPage");	
 				
 		LoginPage loginpage=new LoginPage(driver);		
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  
@@ -33,8 +33,7 @@ public class ListSubCategoryTest extends Base {
 		listsubcategorypage.scrollUpSubCategoryPage();
 		listsubcategorypage.doubleClickOnPaginationSecondPage();
 		boolean isFileUploaded= listsubcategorypage.isFileUploaded();
-		assertTrue(isFileUploaded,"User is not able to edit and upload file in sub category page");
-		
+		assertTrue(isFileUploaded,"User is not able to edit and upload file in sub category page");	
 	}
 	
 	@Test
@@ -50,13 +49,12 @@ public class ListSubCategoryTest extends Base {
 		assertTrue(alertDeletedSubCategory,"User is not able to delete subcategory");
 	}
 	
-
 	@Test                    
 	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingRobotClass() throws AWTException {
 		
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
-		String imgPathLink="C:\\Users\\TestDocuments\\Sample_img.png";
+		String imgPathLink=XlUtility.getString(1, 3, "ListSubCategoryPage");
 			
 		LoginPage loginpage=new LoginPage(driver);		
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  

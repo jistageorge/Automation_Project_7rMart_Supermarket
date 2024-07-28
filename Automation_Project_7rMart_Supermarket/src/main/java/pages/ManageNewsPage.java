@@ -18,9 +18,8 @@ public class ManageNewsPage {
 	@FindBy(xpath="//div[@class='small-box bg-info']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']") WebElement newsMoreInfoLink;
 	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//thead//th") List<WebElement> newsTableHeaderListElement;
 	 
-	public ManageNewsPage clickNewsMoreInfoLink() {
+	public void clickNewsMoreInfoLink() {
 		newsMoreInfoLink.click();
-		return this;
 	}
 	
 	public List<String> verifyHeaderNews() {

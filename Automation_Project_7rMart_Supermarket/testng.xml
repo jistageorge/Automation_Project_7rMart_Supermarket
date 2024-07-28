@@ -30,6 +30,11 @@
 			<include name="verifyHeaderOfManageNewsTable"></include>
 		</methods>
 	  </class>
+	  <class name="testscripts.ListCategoryTest">
+		<methods>
+			<include name="verifyCategoryExistsInTable"></include>
+		</methods>
+	  </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
