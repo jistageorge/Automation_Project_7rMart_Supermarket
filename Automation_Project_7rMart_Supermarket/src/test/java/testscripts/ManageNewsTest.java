@@ -24,7 +24,7 @@ public class ManageNewsTest extends Base {
 		ManageNewsPage managenewspage=new ManageNewsPage(driver);
 		managenewspage.clickNewsMoreInfoLink();
 		
-		List<String> expectedHeaderList = new ArrayList();
+		List<String> expectedHeaderList = new ArrayList<String>();
 		expectedHeaderList.add("News");  
 		expectedHeaderList.add("Action"); 
 		

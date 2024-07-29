@@ -23,7 +23,7 @@ public class ManageNewsPage {
 	}
 	
 	public List<String> verifyHeaderNews() {
-    List<String> header = new ArrayList();	
+    List<String> header = new ArrayList<String>();	
 		
 	    for (WebElement headerElement : newsTableHeaderListElement) {	    	
            String headerValues= headerElement.getText();         

@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class ListCategoryPage {
 	public WebDriver driver;
 	public ListCategoryPage(WebDriver driver) {
@@ -23,8 +25,10 @@ public class ListCategoryPage {
 	
 	public boolean verifyCategoryExistsInsideTable(String categoryExpected) {
 		boolean flag=false;
-		 for (WebElement columnTitle : categoryColumnList) {        	
-	        	String actualCategoryValue=columnTitle.getText();	        	        	        	
+		 for (WebElement columnTitle : categoryColumnList) {   			 	        			        	
+	        	PageUtility pageutility=new PageUtility();
+	        	String actualCategoryValue=pageutility.getText(columnTitle);
+				
 				if (actualCategoryValue.equals(categoryExpected)) 
 			    {				
 					flag=true;
@@ -32,5 +36,4 @@ public class ListCategoryPage {
 	        }
 		 return flag;
 	}
-	
 }
