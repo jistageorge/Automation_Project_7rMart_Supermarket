@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscripts.ListCategoryTest">
+      <class name="testscripts.ListSubCategoryTest">
         <methods>
           <include name="initializeBrowser"/>
-          <include name="verifyCategoryExistsInTable"/>
+          <include name="verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingSendKeys"/>
           <include name="driverQuit"/>
         </methods>
-      </class> <!-- testscripts.ListCategoryTest -->
+      </class> <!-- testscripts.ListSubCategoryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
