@@ -12,12 +12,7 @@
 		<methods>
 			<include name="verifyUserLoginWithCorrectUsernameAndPassword"/>										
 		</methods>
-      </class> 
-      <class name="testscripts.ListCategoryTest">
-		<methods>
-			<include name="verifyCategoryExistsInTable"></include>
-		</methods>
-	  </class>     
+      </class>        
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

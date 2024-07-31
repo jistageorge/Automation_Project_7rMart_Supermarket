@@ -17,17 +17,14 @@ public class ListSubCategoryTest extends Base {
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
 		String imgFilePath=XlUtility.getString(1, 0, "ListSubCategoryPage");	
-		String scrollData=XlUtility.getString(1, 1, "ListSubCategoryPage");	
-				
+		String scrollData=XlUtility.getString(1, 1, "ListSubCategoryPage");					
 		LoginPage loginpage=new LoginPage(driver);		
-		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  
-		
+		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  		
 		ListSubCategoryPage listsubcategorypage=new ListSubCategoryPage(driver);		
 		listsubcategorypage.fluentWaitWithContainedAttribute();		
 		listsubcategorypage.clickSubCategoryMoreInfoLink().clickEditButtonSubCategoryPage();								
 		listsubcategorypage.chooseFileOfEditSubCategorySendKeysMethod(imgFilePath);	
-		listsubcategorypage.clickableWaitElement();	
-		
+		listsubcategorypage.clickableWaitElement();			
 		listsubcategorypage.clickUpdateButton();					    
 		listsubcategorypage.scrollDownSubCategoryPage(scrollData);
 		listsubcategorypage.scrollUpSubCategoryPage();
@@ -54,16 +51,13 @@ public class ListSubCategoryTest extends Base {
 		
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
-		String imgPathLink=XlUtility.getString(1, 3, "ListSubCategoryPage");
-			
+		String imgPathLink=XlUtility.getString(1, 3, "ListSubCategoryPage");			
 		LoginPage loginpage=new LoginPage(driver);		
-		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  
-		
+		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  		
 		ListSubCategoryPage listsubcategorypage=new ListSubCategoryPage(driver);
 		listsubcategorypage.clickSubCategoryMoreInfoLink().clickEditButtonSubCategoryPage();		
 		listsubcategorypage.chooseFileOfEditSubCategoryRobotClassMethod(imgPathLink);		
-		listsubcategorypage.clickUpdateButton();
-				
+		listsubcategorypage.clickUpdateButton();				
 		boolean isImageDisplayed= listsubcategorypage.isFileUploaded();
 		assertTrue(isImageDisplayed,"User is not able to edit and upload file in sub category page");
 		

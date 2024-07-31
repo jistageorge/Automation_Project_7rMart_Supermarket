@@ -18,8 +18,6 @@ public class LoginPage {
 	@FindBy(linkText="Dashboard") WebElement dashboard;
 	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") WebElement invalidCredentialsAlert;
 	
-	
-	
 	public LoginPage enterUserNameOnUserNameField(String username) {
 		userNameInput.sendKeys(username);
 		return this;
