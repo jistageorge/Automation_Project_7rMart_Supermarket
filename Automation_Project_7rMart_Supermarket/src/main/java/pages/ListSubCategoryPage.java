@@ -18,14 +18,14 @@ public class ListSubCategoryPage {
 			this.driver=driver;
 			PageFactory.initElements(driver, this);
 		}
-		@FindBy(xpath="//div[@class='small-box bg-info']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category']") WebElement moreInfoSubCategoryLink;
-		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Subcategory/edit?edit=421&page_ad=1']") WebElement editButtonSubCategoryPage;			
-		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Subcategory/delete?del=418&page_ad=1']") WebElement deleteButtonSubCategoryButton;			
-		@FindBy(xpath="//input[@id='main_img']") WebElement chooseFileButton;			
-		@FindBy(xpath="//button[text()='Update']") WebElement updateButton;	
-		@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tr[2]//td[3]") WebElement imgDisplayed;	
-		@FindBy(xpath="//button[@data-dismiss='alert']") WebElement deletedSubCategoryAlert;	
-		@FindBy(xpath="//ul[@class='pagination pagination-sm m-0 float-right']//li[2]") WebElement pagination2Element;	
+		@FindBy(xpath="//div[@class='small-box bg-info']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category']") private WebElement moreInfoSubCategoryLink;
+		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Subcategory/edit?edit=421&page_ad=1']") private WebElement editButtonSubCategoryPage;			
+		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Subcategory/delete?del=418&page_ad=1']") private WebElement deleteButtonSubCategoryButton;			
+		@FindBy(xpath="//input[@id='main_img']") private WebElement chooseFileButton;			
+		@FindBy(xpath="//button[text()='Update']") private WebElement updateButton;	
+		@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tr[2]//td[3]") private WebElement imgDisplayed;	
+		@FindBy(xpath="//button[@data-dismiss='alert']") private WebElement deletedSubCategoryAlert;	
+		@FindBy(xpath="//ul[@class='pagination pagination-sm m-0 float-right']//li[2]") private WebElement pagination2Element;	
 				
 						
 		public ListSubCategoryPage clickSubCategoryMoreInfoLink() {

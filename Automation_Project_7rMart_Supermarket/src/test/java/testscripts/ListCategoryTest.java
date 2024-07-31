@@ -1,5 +1,6 @@
 package testscripts;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
@@ -14,7 +15,7 @@ public class ListCategoryTest extends Base {
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
 		String categoryExpected=XlUtility.getString(1, 0, "ListCategoryPage");	
-				
+		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();
 		
@@ -23,4 +24,21 @@ public class ListCategoryTest extends Base {
 		boolean isActualCatgeoryTitle=listcategorypage.verifyCategoryExistsInsideTable(categoryExpected);	
 		assertTrue(isActualCatgeoryTitle,"User is not able to find the expected category from the category table");
 	}
+	@Test
+	public void verifyCategoryStatusIsActiveInTable() {
+		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
+		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
+		String categoryStatusExpected="Active";
+				
+		LoginPage loginpage=new LoginPage(driver);
+		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();
+		
+		ListCategoryPage listcategorypage=new ListCategoryPage(driver);
+		listcategorypage.categoryMoreInfo();
+		
+		String actualCategoryStatus=listcategorypage.categoryStatusCheck();
+		assertEquals(actualCategoryStatus,categoryStatusExpected,"The category is not active inside the category table");
+		
+	}
+	
 }

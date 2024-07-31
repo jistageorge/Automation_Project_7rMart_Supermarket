@@ -15,8 +15,8 @@ public class ManageNewsPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//div[@class='small-box bg-info']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']") WebElement newsMoreInfoLink;
-	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//thead//th") List<WebElement> newsTableHeaderListElement;
+	@FindBy(xpath="//div[@class='small-box bg-info']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-news']") private WebElement newsMoreInfoLink;
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//thead//th") private List<WebElement> newsTableHeaderListElement;
 	 
 	public void clickNewsMoreInfoLink() {
 		newsMoreInfoLink.click();

@@ -16,8 +16,9 @@ public class ListCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//div[@class='small-box bg-info']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']") WebElement categoryMoreInfoLink;
-	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]") List<WebElement> categoryColumnList;
+	@FindBy(xpath="//div[@class='small-box bg-info']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-category']") private WebElement categoryMoreInfoLink;
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]") private List<WebElement> categoryColumnList;
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[3]//a") private WebElement categoryStatus;
 		
 	public void categoryMoreInfo() {
 		categoryMoreInfoLink.click();
@@ -35,5 +36,11 @@ public class ListCategoryPage {
 			    }	            
 	        }
 		 return flag;
+	}
+	
+	public String categoryStatusCheck() {
+		PageUtility pageutility=new PageUtility();
+    	String categoryStatusText=pageutility.getText(categoryStatus);    	
+		return categoryStatusText;
 	}
 }

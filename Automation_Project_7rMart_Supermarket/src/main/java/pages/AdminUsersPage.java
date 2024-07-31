@@ -13,19 +13,18 @@ public class AdminUsersPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']") WebElement moreInfoButton;
-	@FindBy(xpath="//a[@onclick='click_button(2)']") WebElement searchButton;
-	@FindBy(xpath="//input[@name='un']") WebElement userNameInputField;
-	@FindBy(xpath="//button[@value='sr']") WebElement searchButtonInsideSearchAdminUsers;
-	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//td[1]") WebElement userNameColumnValue;
-	@FindBy(xpath="//div[@class='card-body']//a[text()='Reset']") WebElement resetButtonInsideSearchUser;
-	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement addNewUserButton;
-	@FindBy(xpath="//input[@name='username']") WebElement userNameAddUser;
-	@FindBy(xpath="//input[@name='password']") WebElement passwordAddUser;
-	@FindBy(xpath="//button[@name='Create']") WebElement saveButton;
-	@FindBy(xpath="//select[@id='user_type']") WebElement selectDropdown;
-	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertSuccess;
-	
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']") private WebElement moreInfoButton;
+	@FindBy(xpath="//a[@onclick='click_button(2)']") private WebElement searchButton;
+	@FindBy(xpath="//input[@name='un']") private WebElement userNameInputField;
+	@FindBy(xpath="//button[@value='sr']") private WebElement searchButtonInsideSearchAdminUsers;
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//td[1]") private WebElement userNameColumnValue;
+	@FindBy(xpath="//div[@class='card-body']//a[text()='Reset']") private WebElement resetButtonInsideSearchUser;
+	@FindBy(xpath="//a[@onclick='click_button(1)']") private WebElement addNewUserButton;
+	@FindBy(xpath="//input[@name='username']") private WebElement userNameAddUser;
+	@FindBy(xpath="//input[@name='password']") private WebElement passwordAddUser;
+	@FindBy(xpath="//button[@name='Create']") private WebElement saveButton;
+	@FindBy(xpath="//select[@id='user_type']") private WebElement selectDropdown;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement alertSuccess;
 
 	
 	public AdminUsersPage clickMoreInfoButton() {
