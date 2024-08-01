@@ -28,7 +28,7 @@ public class ListCategoryTest extends Base {
 	public void verifyCategoryStatusIsActiveInTable() {
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
-		String categoryStatusExpected="Active";
+		String categoryStatusExpected=XlUtility.getString(1, 1, "ListCategoryPage");	
 				
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();
