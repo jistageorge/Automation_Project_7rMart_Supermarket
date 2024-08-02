@@ -10,11 +10,9 @@ import pages.LoginPage;
 import utilities.XlUtility;
 
 public class AdminUsersTest extends Base {
-	
 
 	@Test(description="This is for verifying searched username is displayed in the results table")                    
-	public void verifySearchedAdminUserNameDisplayedOnSearchResultsTable() {
-						
+	public void verifySearchedAdminUserNameDisplayedOnSearchResultsTable() {						
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");
 		String userNameOnSearchInput=XlUtility.getString(1, 0, "AdminUsersPage");		

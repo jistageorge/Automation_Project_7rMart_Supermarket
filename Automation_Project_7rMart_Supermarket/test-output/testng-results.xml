@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-01T10:22:00 IST" name="Suite" finished-at="2024-08-01T10:22:07 IST" duration-ms="6607">
+  <suite started-at="2024-08-02T09:24:08 IST" name="Suite" finished-at="2024-08-02T09:24:12 IST" duration-ms="4275">
     <groups>
+      <group name="Smoke">
+        <method signature="LoginTest.verifyUserLoginWithCorrectUsernameAndPassword()[pri:0, instance:testscripts.LoginTest@5db6b9cd]" name="verifyUserLoginWithCorrectUsernameAndPassword" class="testscripts.LoginTest"/>
+      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2024-08-01T10:22:00 IST" name="Test" finished-at="2024-08-01T10:22:07 IST" duration-ms="6607">
-      <class name="testscripts.ListCategoryTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscripts.ListCategoryTest@69c81773]" started-at="2024-08-01T10:22:00 IST" name="initializeBrowser" finished-at="2024-08-01T10:22:02 IST" duration-ms="2088" status="PASS">
+    <test started-at="2024-08-02T09:24:08 IST" name="Test" finished-at="2024-08-02T09:24:12 IST" duration-ms="4275">
+      <class name="testscripts.LoginTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscripts.LoginTest@5db6b9cd]" started-at="2024-08-02T09:24:08 IST" name="initializeBrowser" finished-at="2024-08-02T09:24:11 IST" duration-ms="2444" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,48 +21,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyCategoryExistsInTable()[pri:0, instance:testscripts.ListCategoryTest@69c81773]" started-at="2024-08-01T10:22:02 IST" name="verifyCategoryExistsInTable" finished-at="2024-08-01T10:22:04 IST" duration-ms="1842" status="PASS">
+        <test-method signature="verifyUserLoginWithCorrectUsernameAndPassword()[pri:0, instance:testscripts.LoginTest@5db6b9cd]" started-at="2024-08-02T09:24:11 IST" name="verifyUserLoginWithCorrectUsernameAndPassword" description="This is for verifying loginpage with valid credentials " finished-at="2024-08-02T09:24:12 IST" duration-ms="1622" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCategoryExistsInTable -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.ListCategoryTest@69c81773]" started-at="2024-08-01T10:22:04 IST" name="driverQuit" finished-at="2024-08-01T10:22:04 IST" duration-ms="200" status="PASS">
+        </test-method> <!-- verifyUserLoginWithCorrectUsernameAndPassword -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.LoginTest@5db6b9cd]" started-at="2024-08-02T09:24:12 IST" name="driverQuit" finished-at="2024-08-02T09:24:12 IST" duration-ms="156" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyCategoryExistsInTable status=SUCCESS method=ListCategoryTest.verifyCategoryExistsInTable()[pri:0, instance:testscripts.ListCategoryTest@69c81773] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserLoginWithCorrectUsernameAndPassword status=SUCCESS method=LoginTest.verifyUserLoginWithCorrectUsernameAndPassword()[pri:0, instance:testscripts.LoginTest@5db6b9cd] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testscripts.ListCategoryTest@69c81773]" started-at="2024-08-01T10:22:04 IST" name="initializeBrowser" finished-at="2024-08-01T10:22:06 IST" duration-ms="1517" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyCategoryStatusIsActiveInTable()[pri:0, instance:testscripts.ListCategoryTest@69c81773]" started-at="2024-08-01T10:22:06 IST" name="verifyCategoryStatusIsActiveInTable" finished-at="2024-08-01T10:22:06 IST" duration-ms="807" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCategoryStatusIsActiveInTable -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscripts.ListCategoryTest@69c81773]" started-at="2024-08-01T10:22:06 IST" name="driverQuit" finished-at="2024-08-01T10:22:07 IST" duration-ms="105" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCategoryStatusIsActiveInTable status=SUCCESS method=ListCategoryTest.verifyCategoryStatusIsActiveInTable()[pri:0, instance:testscripts.ListCategoryTest@69c81773] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverQuit -->
-      </class> <!-- testscripts.ListCategoryTest -->
+      </class> <!-- testscripts.LoginTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

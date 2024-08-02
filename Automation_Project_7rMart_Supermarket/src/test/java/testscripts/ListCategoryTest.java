@@ -14,11 +14,9 @@ public class ListCategoryTest extends Base {
 	public void verifyCategoryExistsInTable() {
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
-		String categoryExpected=XlUtility.getString(1, 0, "ListCategoryPage");	
-		
+		String categoryExpected=XlUtility.getString(1, 0, "ListCategoryPage");			
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();
-		
+		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();		
 		ListCategoryPage listcategorypage=new ListCategoryPage(driver);
 		listcategorypage.categoryMoreInfo();			
 		boolean isActualCatgeoryTitle=listcategorypage.verifyCategoryExistsInsideTable(categoryExpected);	
@@ -28,17 +26,12 @@ public class ListCategoryTest extends Base {
 	public void verifyCategoryStatusIsActiveInTable() {
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
-		String categoryStatusExpected=XlUtility.getString(1, 1, "ListCategoryPage");	
-				
+		String categoryStatusExpected=XlUtility.getString(1, 1, "ListCategoryPage");					
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();
-		
+		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();		
 		ListCategoryPage listcategorypage=new ListCategoryPage(driver);
-		listcategorypage.categoryMoreInfo();
-		
+		listcategorypage.categoryMoreInfo();		
 		String actualCategoryStatus=listcategorypage.categoryStatusCheck();
-		assertEquals(actualCategoryStatus,categoryStatusExpected,"The category is not active inside the category table");
-		
-	}
-	
+		assertEquals(actualCategoryStatus,categoryStatusExpected,"The category is not active inside the category table");		
+	}	
 }

@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import utilities.XlUtility;
-
+import retry.Retry;
 public class LoginTest extends Base{
-	@Test(description="This is for verifying loginpage with valid credentials ",groups= {"Smoke"})                   
+	@Test(description="This is for verifying loginpage with valid credentials ",groups= {"Smoke"},retryAnalyzer=Retry.class)                   
 	public void verifyUserLoginWithCorrectUsernameAndPassword() {			
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	

@@ -12,8 +12,7 @@ import utilities.XlUtility;
 public class ListSubCategoryTest extends Base {
 	
 	@Test                    
-	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingSendKeys() throws AWTException {
-		
+	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingSendKeys() throws AWTException {		
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
 		String imgFilePath=XlUtility.getString(1, 0, "ListSubCategoryPage");	
@@ -47,8 +46,7 @@ public class ListSubCategoryTest extends Base {
 	}
 	
 	@Test                    
-	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingRobotClass() throws AWTException {
-		
+	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingRobotClass() throws AWTException {		
 		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
 		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
 		String imgPathLink=XlUtility.getString(1, 3, "ListSubCategoryPage");			
@@ -61,6 +59,5 @@ public class ListSubCategoryTest extends Base {
 		boolean isImageDisplayed= listsubcategorypage.isFileUploaded();
 		assertTrue(isImageDisplayed,"User is not able to edit and upload file in sub category page");
 		
-	}
-		
+	}	
 }
