@@ -68,8 +68,7 @@ public class PageUtility {
 	 public String getCssValue(WebElement element,String cssElement) {
 		 String cssValue=element.getCssValue(cssElement);
 		 return cssValue;
-	 }
-	 
+	 }	 
 	 public String getText(WebElement element) {
 		 String getText=element.getText();
 		 return getText;

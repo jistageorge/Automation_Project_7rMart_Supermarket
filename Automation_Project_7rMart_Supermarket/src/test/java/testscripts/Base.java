@@ -1,7 +1,10 @@
 package testscripts;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,16 +15,29 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
+import utilities.ConstantsFile;
 import utilities.ScreenShotUtility;
 
 public class Base {
 public WebDriver driver;  
 public ScreenShotUtility screenshotutility;
-	
+public Properties prop;
+FileInputStream fs;
 	@BeforeMethod(alwaysRun=true)
 	@Parameters("browser")
 	public void initializeBrowser(String browser) throws Exception
-	{
+	{		
+		try 
+		{
+			prop = new Properties();
+			fs = new FileInputStream(ConstantsFile.CONFIGFILE);
+			prop.load(fs);
+		} 
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+		
 		if(browser.equalsIgnoreCase("chrome")) {
 			driver=new ChromeDriver(); 	
 		}
@@ -34,8 +50,8 @@ public ScreenShotUtility screenshotutility;
 		else {
 			throw new Exception("Browser is not connected");
 		}
-	
-	driver.get("https://groceryapp.uniqassosiates.com/admin/login"); 
+			 
+	driver.get(prop.getProperty("url")); 
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	driver.manage().window().maximize(); 
 	System.out.println();

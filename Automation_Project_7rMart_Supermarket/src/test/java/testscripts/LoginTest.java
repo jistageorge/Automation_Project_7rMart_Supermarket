@@ -29,7 +29,7 @@ public class LoginTest extends Base{
 		assertTrue(isHomePageDisplayed,"Navigated to home page even if user enters correct username and wrong password");		
 	}
 	
-	@Test(dataProvider="LoginProvider")                 
+	@Test(description="This is for verifying loginpage with invalid username and valid password",dataProvider="LoginProvider")                 
 	public void verifyUserLoginWithWrongUsernameAndCorrectPassword(String userNameExpected,String passwordExpected) 	{			
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton(); 
@@ -37,7 +37,7 @@ public class LoginTest extends Base{
 		assertTrue(isHomePageDisplayed,"Navigated to home page even if user enters wrong username and correct password");		
 	}
 	
-	@Test                    
+	@Test(description="This is for verifying loginpage with invalid username and password")                    
 	public void verifyUserLoginWithWrongUsernameAndPassword() {
 		String userNameExpected=XlUtility.getString(1, 2, "LoginPage");
 		String passwordExpected=XlUtility.getString(1, 3, "LoginPage");		

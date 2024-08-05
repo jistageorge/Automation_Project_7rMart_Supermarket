@@ -3,18 +3,19 @@ package testscripts;
 import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTException;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.ListSubCategoryPage;
 import pages.LoginPage;
+import retry.Retry;
 import utilities.XlUtility;
 
 public class ListSubCategoryTest extends Base {
 	
-	@Test                    
-	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingSendKeys() throws AWTException {		
-		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
-		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
+	@Test(description="This is for verifying user is able to edit and upload a file in subcategory page using send keys",dataProvider="LoginProvider")                    
+	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingSendKeys(String userNameExpected,String passwordExpected) throws AWTException {		
 		String imgFilePath=XlUtility.getString(1, 0, "ListSubCategoryPage");	
 		String scrollData=XlUtility.getString(1, 1, "ListSubCategoryPage");					
 		LoginPage loginpage=new LoginPage(driver);		
@@ -32,10 +33,8 @@ public class ListSubCategoryTest extends Base {
 		assertTrue(isFileUploaded,"User is not able to edit and upload file in sub category page");	
 	}
 	
-	@Test
-	public void verifyUserIsAbleToDeleteSubCategory() {
-		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
-		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");							
+	@Test(description="This is for verifying user is able to delete a subcategory",dataProvider="LoginProvider",groups= {"Regression"}) 
+	public void verifyUserIsAbleToDeleteSubCategory(String userNameExpected,String passwordExpected) {						
 		LoginPage loginpage=new LoginPage(driver);		
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  		
 		ListSubCategoryPage listsubcategorypage=new ListSubCategoryPage(driver);
@@ -45,10 +44,8 @@ public class ListSubCategoryTest extends Base {
 		assertTrue(alertDeletedSubCategory,"User is not able to delete subcategory");
 	}
 	
-	@Test                    
-	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingRobotClass() throws AWTException {		
-		String userNameExpected=XlUtility.getString(1, 0, "LoginPage");  	
-		String passwordExpected=XlUtility.getString(1, 1, "LoginPage");	
+	@Test(description="This is for verifying user is able to upload file using robot class",dataProvider="LoginProvider",retryAnalyzer=Retry.class)                    
+	public void verifyUserAbleToEditAndUploadFileInSubCategoryPageUsingRobotClass(String userNameExpected,String passwordExpected) throws AWTException {			
 		String imgPathLink=XlUtility.getString(1, 3, "ListSubCategoryPage");			
 		LoginPage loginpage=new LoginPage(driver);		
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();  		
@@ -57,7 +54,12 @@ public class ListSubCategoryTest extends Base {
 		listsubcategorypage.chooseFileOfEditSubCategoryRobotClassMethod(imgPathLink);		
 		listsubcategorypage.clickUpdateButton();				
 		boolean isImageDisplayed= listsubcategorypage.isFileUploaded();
-		assertTrue(isImageDisplayed,"User is not able to edit and upload file in sub category page");
-		
-	}	
+		assertTrue(isImageDisplayed,"User is not able to edit and upload file in sub category page");		
+	}
+	
+	@DataProvider(name = "LoginProvider")
+	public Object[][] getDataFromTestData() {
+		return new Object[][] { { XlUtility.getString(1, 0, "LoginPage"), XlUtility.getString(1, 1, "LoginPage") },
+		};
+	}
 }

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import utilities.FakerUtility;
 import utilities.PageUtility;
 
 public class AdminUsersPage {
@@ -79,4 +81,9 @@ public class AdminUsersPage {
 		String usernameTableValue=userNameColumnValue.getText();
 		return usernameTableValue;		
 	}
+	
+	public String addNewUserUsingFakerUtility() {
+		FakerUtility fakerutility=new FakerUtility();
+		return fakerutility.getFakeFirstName();		
+	}	
 }

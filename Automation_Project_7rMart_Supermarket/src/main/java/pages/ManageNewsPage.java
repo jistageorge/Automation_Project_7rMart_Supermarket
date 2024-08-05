@@ -23,13 +23,19 @@ public class ManageNewsPage {
 	}
 	
 	public List<String> verifyHeaderNews() {
-    List<String> header = new ArrayList<String>();	
+		List<String> header = new ArrayList<String>();	
 		
-	    for (WebElement headerElement : newsTableHeaderListElement) {	    	
-           String headerValues= headerElement.getText();         
-           header.add(headerValues);            
-	    }
+		for (WebElement headerElement : newsTableHeaderListElement) {	    	
+			String headerValues= headerElement.getText();         
+			header.add(headerValues);            
+		}
 		return header;	    	   
+	}
+	public List<String> addValuesToHeader() {  
+		List<String> expectedHeaderList = new ArrayList<String>();
+		expectedHeaderList.add("News");  
+		expectedHeaderList.add("Action");
+		return expectedHeaderList;	      	   
 	}
 	
 }
