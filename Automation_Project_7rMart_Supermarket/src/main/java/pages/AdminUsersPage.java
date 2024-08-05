@@ -69,9 +69,10 @@ public class AdminUsersPage {
 		passwordAddUser.sendKeys(passwordtoaddusser);
 		return this;
 	}
-	public void selectDropdownElement(String value) {
+	public AdminUsersPage selectDropdownElement(String value) {
 		PageUtility pageutility=new PageUtility();
-		pageutility.selectValueUsingSelectByValue(selectDropdown,value);		
+		pageutility.selectValueUsingSelectByValue(selectDropdown,value);
+		return this;
 	}	
 	public AdminUsersPage clickonSaveButton() {
 		saveButton.click();

@@ -33,9 +33,7 @@ public class AdminUsersTest extends Base {
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();		
 		AdminUsersPage adminuserspage=new AdminUsersPage(driver);
 		String userNameExpectedFake=adminuserspage.addNewUserUsingFakerUtility();	
-		adminuserspage.clickMoreInfoButton().clickAddNewUserButton().enterUserNameOnUserNameFieldAddUser(userNameExpectedFake).enterPasswordOnUserNameFieldAddUser(passwordExpectedAddUser);		
-		adminuserspage.selectDropdownElement(dropdownValue);
-		adminuserspage.clickonSaveButton();	
+		adminuserspage.clickMoreInfoButton().clickAddNewUserButton().enterUserNameOnUserNameFieldAddUser(userNameExpectedFake).enterPasswordOnUserNameFieldAddUser(passwordExpectedAddUser).selectDropdownElement(dropdownValue).clickonSaveButton();	
 		String addedUsernameDisplayed=adminuserspage.checkAddedUserNameIsDisplayed();
 		assertEquals(addedUsernameDisplayed,userNameExpectedFake,"User is not added to the admin user table");
 	}
@@ -46,8 +44,7 @@ public class AdminUsersTest extends Base {
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(userNameExpected).enterPasswordOnUserNameField(passwordExpected).clickonSigninButton();		
 		AdminUsersPage adminuserspage=new AdminUsersPage(driver);
-		adminuserspage.clickMoreInfoButton().clickSearchButton().userNameOnSearchInput(userNameOnSearchInput);
-		adminuserspage.clickResetButtonInsideSearchAdminUsers();			
+		adminuserspage.clickMoreInfoButton().clickSearchButton().userNameOnSearchInput(userNameOnSearchInput).clickResetButtonInsideSearchAdminUsers();			
 		boolean resetOfSearchEnabled=adminuserspage.verifyResetButtonInsideSearchAdminUsersEnabled();	
 		assertTrue(resetOfSearchEnabled,"Reset action fails");		
 	}

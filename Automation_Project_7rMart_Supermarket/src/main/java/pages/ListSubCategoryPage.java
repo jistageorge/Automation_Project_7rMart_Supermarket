@@ -19,8 +19,8 @@ public class ListSubCategoryPage {
 			PageFactory.initElements(driver, this);
 		}
 		@FindBy(xpath="//div[@class='small-box bg-info']//child::a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category']") private WebElement moreInfoSubCategoryLink;
-		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Subcategory/edit?edit=421&page_ad=1']") private WebElement editButtonSubCategoryPage;			
-		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Subcategory/delete?del=418&page_ad=1']") private WebElement deleteButtonSubCategoryButton;			
+		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Subcategory/edit?edit=443&page_ad=1']") private WebElement editButtonSubCategoryPage;			
+		@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Subcategory/delete?del=444&page_ad=1']") private WebElement deleteButtonSubCategoryButton;			
 		@FindBy(xpath="//input[@id='main_img']") private WebElement chooseFileButton;			
 		@FindBy(xpath="//button[text()='Update']") private WebElement updateButton;	
 		@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tr[2]//td[3]") private WebElement imgDisplayed;	
@@ -37,24 +37,28 @@ public class ListSubCategoryPage {
 			return this;
 		}
 		
-		public void chooseFileOfEditSubCategorySendKeysMethod(String imgFilePath) throws AWTException {
+		public ListSubCategoryPage chooseFileOfEditSubCategorySendKeysMethod(String imgFilePath) throws AWTException {
 			FileUploadUtility fileuploadutility=new FileUploadUtility();
-			fileuploadutility.fileUploadUsingSendKeys(chooseFileButton,imgFilePath);			
+			fileuploadutility.fileUploadUsingSendKeys(chooseFileButton,imgFilePath);
+			return this;
 		}	
 				
-		public void chooseFileOfEditSubCategoryRobotClassMethod(String imgPath) throws AWTException {			
+		public ListSubCategoryPage chooseFileOfEditSubCategoryRobotClassMethod(String imgPath) throws AWTException {			
 			FileUploadUtility fileuploadutility=new FileUploadUtility();
 			fileuploadutility.fileUploadUsingRobotClass(imgPath);	
+			return this;
 		}
 		
-		public void scrollDownSubCategoryPage(String scrollData) {
+		public ListSubCategoryPage scrollDownSubCategoryPage(String scrollData) {
 			PageUtility pageutility=new PageUtility();
-			pageutility.scrollDownPage((JavascriptExecutor) driver, scrollData);										
+			pageutility.scrollDownPage((JavascriptExecutor) driver, scrollData);	
+			return this;
 		}
 		
-		public void scrollUpSubCategoryPage() {
+		public ListSubCategoryPage scrollUpSubCategoryPage() {
 			PageUtility pageutility=new PageUtility();
-			pageutility.scrollUpPage((WebDriver) driver);										
+			pageutility.scrollUpPage((WebDriver) driver);
+			return this;
 		}
 		
 		public boolean isFileUploaded() {
@@ -62,8 +66,9 @@ public class ListSubCategoryPage {
 			return imageIsDisplayed;
 		}
 				
-		public void clickUpdateButton() {
+		public ListSubCategoryPage clickUpdateButton() {
 			updateButton.click();
+			return this;
 		}
 			
 		public ListSubCategoryPage clickDeleteButtonSubCategoryPage() {
@@ -71,26 +76,30 @@ public class ListSubCategoryPage {
 			return this;
 		}
 		
-		public void acceptAlertDeleteSubCategory() {
+		public ListSubCategoryPage acceptAlertDeleteSubCategory() {
 			PageUtility pageutility=new PageUtility();
 			pageutility.acceptAlert(driver);
+			return this;
 		}
 		public boolean deleteSubCategorySuccessAlertDisplayed() {
 			boolean isDeleteAlertDisplayed=deletedSubCategoryAlert.isDisplayed();
 			return isDeleteAlertDisplayed;
 		}
 			
-		public void doubleClickOnPaginationSecondPage() {
+		public ListSubCategoryPage doubleClickOnPaginationSecondPage() {
 			PageUtility pageutility=new PageUtility();
 			pageutility.dragActionToDoubleClickElement(driver, pagination2Element);
+			return this;
 		}
-		public void clickableWaitElement() {
+		public ListSubCategoryPage clickableWaitElement() {
 			WaitUtility waitutility=new WaitUtility();
 			waitutility.clickableWait(driver, updateButton);
+			return this;
 		}
-		public void fluentWaitWithContainedAttribute() {
+		public ListSubCategoryPage fluentWaitWithContainedAttribute() {
 			WaitUtility waitutility=new WaitUtility();
 			waitutility.fluentWaitByContainedAttribute(driver, moreInfoSubCategoryLink, "class", "small-box-footer" );
+			return this;
 		}
 				
 }
